@@ -9,7 +9,8 @@ from .middlewares.auth import  auth_middleware
 from django.views import View
 
 # Create your views here.
-
+def home(request):
+    return render(request,'home.html')
 
 def index(request):
     if request.method=='GET':
@@ -55,7 +56,7 @@ def index(request):
 
         request.session['cart']=cart
         print(request.session['cart'])
-        return redirect('homepage')
+        return redirect('index')
 
 
 def validateuser(customer):
