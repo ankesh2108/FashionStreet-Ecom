@@ -1,0 +1,51 @@
+
+
+{% extends 'base.html'%}
+
+{%block content%}
+
+<div class="container shadow p-2 mb-5" style="background: aquamarine;">
+    <div class="p-4 m-4">
+        <div class="col-lg-5 mx-auto border rounded p-4 shadow  mb-5 bg-white rounded">
+            <div class="alert alert-success border rounded">Create An Account</div>
+            <form action="/signup" method="post">
+               
+              {% csrf_token%}
+
+              {% if error %}
+               <div class="alert alert-danger" role="alert">
+                 <strong>{{error}}</strong>
+               </div>
+              {% endif%}
+
+
+                <div class="form-group my-2 ">
+                    <label for="">First Name</label>
+                    <input type="text" value="{{values.first_name}}" name="firstname"  class="form-control shadow p-2 mb-3 bg-white rounded" placeholder="Enter Your Name" aria-describedby="helpId">
+                  </div>
+
+                  <div class="form-group my-2 ">
+                    <label for="">Last Name</label>
+                    <input type="text" value="{{values.last_name}}" name="lastname" id="" class="form-control shadow p-2 mb-3 bg-white rounded" placeholder="Enter Your LastName" aria-describedby="helpId">
+                  </div>
+
+
+                  <div class="form-group my-2 ">
+                    <label for="">Email</label>
+                    <input required type="email" value="{{values.email}}" name="email" id="" class="form-control shadow p-2 mb-3  bg-white rounded" placeholder="example@gmail.com" >
+                  </div>
+
+
+                  <div class="form-group my-2 ">
+                    <label for="">Password</label>
+                    <input required type="password" name="password" id="" class="form-control shadow p-2 mb-3 bg-white rounded" placeholder="********">
+                  </div>
+
+                  <div class="form-group ">
+                      <input class="btn btn-sm btn-info shadow p-2 mb-5 rounded" type="submit" value="create a account">
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>
+{%endblock%}
