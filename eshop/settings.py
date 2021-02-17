@@ -25,7 +25,7 @@ SECRET_KEY = '2r_k*g-&9cu(7i=edj9nph3hiln48bck3_$deooq@i^ra&6$z='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','fashionstreet-ankesh.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1','fashionstreet-ankesh.herokuapp.com']
 #'127.0.0.1','AnkeshEshop.com'
 
 # Application definition
